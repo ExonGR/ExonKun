@@ -86,7 +86,7 @@ bot.on('message', message=>{
 
  
 bot.on('message', message=>{
-  if (message.content === 'Who are you \<@&618563953001234432>'){
+  if (message.content === 'Who are you ExonKun?){
     const attachment = new Attachment('./exon.mp3')
     message.channel.send(message.author, attachment);
   }
