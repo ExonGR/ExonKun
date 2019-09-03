@@ -2,6 +2,8 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const prefix = 'e-';
 
+const {Client, Attachment} = require("discord.js");
+
 bot.on('ready', () => {
   bot.user.setStatus('dnd')
   bot.user.setPresence({
