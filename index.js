@@ -53,9 +53,51 @@ switch (args[0]) {
         .setFooter('You are welcome');
       message.channel.sendEmbed(AvatarEmbed);
       break;
+          case 'help':
+          const exampleEmbed = new Discord.RichEmbed()
+          .setColor('#cc99ff')
+          .setTitle('Help Command Section')
+          .setImage("https://cdn.discordapp.com/attachments/615288096245678082/618536403017662475/COMMANDS.png")
+          .addField('Prefix is e-')
+          .addField('avatar', 'shows your avatar duhhh')
+          .addField('Ricardo', 'Without prefix :3')
+          .addField('omae wa mou shindeiru', 'Without Prefix :3')
+          .addField('ping', 'pong')
+          .setTimestamp()
+        
+        message.channel.send(exampleEmbed);
     }
 })
+    
 
+
+bot.on('message', message=>{
+
+  let args = message.content.substring(prefix.length).split(" ");
+
+  switch(args[0]){
+    case 'exon':
+      const attachment = new Attachment('./exon.mp3')
+      message.channel.send(message.author, attachment);
+      break;
+      
+  }
+})
+
+ 
+bot.on('message', message=>{
+  if (message.content === 'Who are you \<@&618563953001234432>'){
+    const attachment = new Attachment('./exon.mp3')
+    message.channel.send(message.author, attachment);
+  }
+})
+
+bot.on('message', message=>{
+  if (message.content === 'TMYK'){
+    const attachment = new Attachment('./TMYK.jpg')
+    message.channel.send(message.author, attachment);
+  }
+})
 
 
 bot.login(process.env.BOT_TOKEN);
