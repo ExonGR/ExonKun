@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const token = 'NjE4NDEwMjAxNjE1NDMzNzM3.XW5Y6g.VuIZIXsfprjitBG_NrfoAZ9JPk8';
 const prefix = 'e-';
 
 
@@ -37,4 +36,4 @@ switch (args[0]) {
 
 
 
-bot.login(token);
+bot.login(process.env.BOT_TOKEN);
