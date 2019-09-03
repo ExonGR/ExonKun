@@ -2,6 +2,18 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const prefix = 'e-';
 
+bot.on('ready', () => {
+  bot.user.setStatus('dnd')
+  bot.user.setPresence({
+      game: {
+          name: 'Ricardo',
+          type: "WATCHING",
+          
+          
+      }
+  });
+});
+
 bot.on('message', msg => {
     if (msg.content === 'Begin'){
       msg.channel.send('Your dad gay')
