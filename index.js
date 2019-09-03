@@ -2,7 +2,17 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const prefix = 'e-';
 
+bot.on('message', msg => {
+    if (msg.content === 'Begin'){
+      msg.channel.send('Your dad gay')
+    }
+})
 
+bot.on('message', msg => {
+    if (msg.content === 'no,u'){
+      msg.channel.send('Your dad gay')
+    }
+})
 
 bot.on('message', message => {
   if (message.author.bot) return;
