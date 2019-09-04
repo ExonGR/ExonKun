@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const bot = new Discord.Client();
 const prefix = 'e-';
 const fs = require('fs');
 const {Client, Attachment} = require("discord.js");
