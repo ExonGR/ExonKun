@@ -3,6 +3,7 @@ const prefix = 'e-';
 const fs = require('fs');
 const {Client, Attachment} = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
+const config = require('./config.json');
 
 // Load commands
 bot.commands = new Discord.Collection();
