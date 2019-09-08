@@ -161,6 +161,14 @@ bot.on('message', message=>{
   }
 })
 
+bot.on('message', message=>{
+
+let msg = message.content.toUpperCase();
+let sender = message.author;
+let cont = message.content.slice(prefix.length).split(" ");
+let args = cont.slice(1);
+
+
 
   if (msg.startsWith(prefix + "WEATHER")) {
     weather.find({search: args.join(" "), degreeType: "C"}, function(err, result) {
