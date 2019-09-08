@@ -4,6 +4,7 @@ const fs = require('fs');
 const {Client, Attachment} = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 const config = require('./config.json');
+var weather = require("weather-js");
 
 // Load commands
 bot.commands = new Discord.Collection();
@@ -160,5 +161,30 @@ bot.on('message', message=>{
   }
 })
 
+
+  if (msg.startsWith(prefix + "WEATHER")) {
+    weather.find({search: args.join(" "), degreeType: "C"}, function(err, result) {
+      if (err) message.channel.send(err);
+
+      var current = result[0].current;
+      var location = result[0].location;
+      var forecast = result[0].forecast;
+
+      const embed = new Discord.RichEmbed()
+        .setDescription(`**WEATHER**`)
+        .setAuthor(`Weather for ${current.observationpoint}`)
+        .setThumbnail(current.imageUrl)
+        .setColor(0x00AE86)
+        .addField(`Timezone`,`UTC${location.timezone}`, true)
+        .addField(`Degree Type`,`${location.degreetype}`, true)
+        .addField('Temperature',`${current.temperature} ${location.degreetype}  Degrees`, true)
+        .addField('Feels Like', `${current.feelslike} ${location.degreetype} Degrees`, true)
+        .addField('Winds',current.winddisplay, true)
+        .addField('Humidity', `${current.humidity}%`, true)
+
+        message.channel.send({embed});
+    });
+  }
+});
 
 bot.login(process.env.BOT_TOKEN);
