@@ -86,8 +86,8 @@ bot.on('ready', () => {
 });
 
 //
-function emoji (id,message) {
- return message.guild.emojis.get(id).toString()
+function emoji (id, message) {
+ return message.guild.emojis.get(id).toString();
 }
 //
 
@@ -217,7 +217,9 @@ if (message.startsWith (prefix + "suck")) {
   message.channel.send ( emoji("629077609296166936") );
  }
 
-    
+ if (message.startsWith (prefix + "emoji")) {
+   message.channel.send ( emoji("") );
+ }
     
     
 bot.login(process.env.BOT_TOKEN);
