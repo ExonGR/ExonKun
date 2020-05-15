@@ -6,6 +6,17 @@ const bot = new Discord.Client({disableEveryone: true});
 const config = require('./config.json');
 var weather = require("weather-js");
 
+//
+
+function emoji (id) {
+  return client.emojis.get(id).toString();
+  {
+
+
+
+
+
+
 // Load commands
 bot.commands = new Discord.Collection();
 fs.readdir("./commands/", (err, files) => {
@@ -195,4 +206,11 @@ let args = cont.slice(1);
   }
 });
 
+
+if (msg.startsWith (prefix + "suck")) {
+  message.channel.send ( emoji("629077609296166936") );
+  {
+    
+    
+    
 bot.login(process.env.BOT_TOKEN);
