@@ -212,11 +212,11 @@ let args = cont.slice(1);
   }
 });
 
-
+bot.on('message', message => {
 if (message.startsWith (prefix + "suck")) {
   message.channel.send ( emoji("629077609296166936") );
+ }
 }
-
     
     
     
