@@ -85,6 +85,14 @@ bot.on('ready', () => {
   });
 });
 
+//
+function emoji (id,message) {
+ return message.guild.emojis.get(id).toString()
+}
+//
+
+
+
 bot.on('message', msg => {
     if (msg.content === 'Begin'){
       msg.channel.send('Your dad gay')
@@ -205,6 +213,9 @@ let args = cont.slice(1);
 });
 
 
+if (msg.startsWith (prefix + "suck")) {
+  message.channel.send ( emoji("629077609296166936") );
+}
 
     
     
