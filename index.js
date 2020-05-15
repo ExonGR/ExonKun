@@ -8,9 +8,7 @@ var weather = require("weather-js");
 
 //
 
-function emoji (id) {
-  return client.emojis.get(id).toString();
-  {
+
 
 
 
@@ -207,9 +205,7 @@ let args = cont.slice(1);
 });
 
 
-if (msg.startsWith (prefix + "suck")) {
-  message.channel.send ( emoji("629077609296166936") );
-  {
+
     
     
     
